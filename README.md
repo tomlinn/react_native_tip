@@ -62,9 +62,41 @@ const a_input = a.map((type,index)=> <TextInput key={index} placeholder={type+""
 
 ```
 
+## 4
 
+this will be error.
+it'll say undefined is not an object.
+``` java
+constructor(props){
+  this.tmp=0;
+}
+onAdd(){
+  var tmp= this.num;
+  console.warn(tmp);
+}
+```
 
-
+solution-1
+```java
+constructor(props){
+  this.tmp=0;
+  this.onAdd()=this.onAdd.bind(this);
+}
+onAdd(){
+  var tmp= this.num;
+  console.warn(tmp);
+}
+```
+solution-2
+```java
+constructor(props){
+  this.tmp=0;
+}
+onAdd=()=>{
+  var tmp= this.num;
+  console.warn(tmp);
+}
+```
 
 
 
